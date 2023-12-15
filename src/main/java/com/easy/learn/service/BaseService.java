@@ -6,5 +6,5 @@ public interface BaseService<T> {
     T create(T t);
     boolean update(T t);
     List<T> findAll();
-    boolean delete(String uuid);
+    boolean delete(Long id);
 }

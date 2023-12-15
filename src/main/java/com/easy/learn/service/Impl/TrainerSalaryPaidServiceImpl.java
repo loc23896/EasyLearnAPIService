@@ -56,12 +56,19 @@ public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
 
 
     @Override
-    public boolean delete(String uuid) {
-        TrainerSalaryPaid tsp = repository.findByTrainerSalaryPaidId(uuid);
-        if(tsp != null){
+    public boolean delete(Long id) {
+        TrainerSalaryPaid tsp = repository.findById(id).get();
+        if (tsp != null) {
             repository.delete(tsp);
             return true;
         }
         return false;
+    }
+
+    @Override
+    public TrainerSalaryPaidDTO findByTrainerSalaryPaidId(Long id) {
+        TrainerSalaryPaid entity = repository.findById(id) != null ? repository.findById(id).get() : new TrainerSalaryPaid();
+
+        return mapper.convertEntityToDTO(entity);
     }
 }

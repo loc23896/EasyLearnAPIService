@@ -1,19 +1,20 @@
 package com.easy.learn.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@EqualsAndHashCode
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+//@JsonInclude(JsonInclude.Include.NON_NULL) xóa khi chưa hiển thị
 public class TrainerSalaryPaidDTO {
     private Long id;
     private String trainerSalaryPaidId;
     private Integer weekNumber;
     private Integer monthNumber;
     private Integer yearNumber;
-    private double totalNumber;
-
+    private Double totalNumber;
 }

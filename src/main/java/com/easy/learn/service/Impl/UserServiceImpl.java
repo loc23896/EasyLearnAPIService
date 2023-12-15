@@ -56,8 +56,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean delete(String uuid) {
-        User user = repository.findByUuid(uuid);
+    public boolean delete(Long id) {
+        User user = repository.findById(id).get();
         if (user != null) {
             repository.delete(user);
             return true;

@@ -11,12 +11,6 @@ import lombok.EqualsAndHashCode;
 public class UserDTO {
     private Long id;
     private String uuid;
-
-//    @JsonProperty("user_name")
     private String userName;
-
     private String password;
-
-
-
 }
