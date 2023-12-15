@@ -20,6 +20,9 @@ public interface ApiPath {
     String TRAINER_SALARY_CREATE = API + "/trainersalary/create";
     String TRAINER_SALARY_UPDATE = API + "/trainersalary/update";
     String TRAINER_SALARY_DELETE = API + "/trainersalary/delete";
+    String MANAGER_SIGN_IN = API + "/manager/sign-in";
+    String MANAGER_GET_ALL = API + "/manager/get-all";
+
     // end
 
     String ADMIN_GET_INDEX = API+"/admin";

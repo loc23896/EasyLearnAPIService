@@ -2,11 +2,16 @@ server:
   port: 9090
 
 spring:
+  jpa:
+      open-in-view: false
+
   profiles:
     active: dev
 
   main:
     banner-mode: off
+    log-startup-info: true
 logging:
   level:
     root: warn
+
