@@ -56,8 +56,8 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public boolean delete(String uuid) {
-        Manager manager = repository.findByUuid(uuid);
+    public boolean delete(Long id) {
+        Manager manager = repository.findById(id).get();
         if (manager != null) {
             repository.delete(manager);
             return true;
