@@ -23,6 +23,13 @@ public interface ApiPath {
     String MANAGER_SIGN_IN = API + "/manager/sign-in";
     String MANAGER_GET_ALL = API + "/manager/get-all";
 
+    //    trainer
+    String TRAINER_GET_ALL = API + "/trainer/get-all";
+    String TRAINER_GET_UUID = API + "/trainer/get-by-uuid";
+    String TRAINER_CREATE = API + "/trainer/create";
+    String TRAINER_UPDATE = API + "/trainer/get-update";
+    String TRAINER_DELETE = API + "/trainer/delete";
+
     // end
 
     String ADMIN_GET_INDEX = API+"/admin";
