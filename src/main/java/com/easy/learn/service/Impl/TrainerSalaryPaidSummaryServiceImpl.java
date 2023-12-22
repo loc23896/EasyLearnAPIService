@@ -1,10 +1,10 @@
 package com.easy.learn.service.Impl;
 
-import com.easy.learn.dto.TrainerSalaryPaidDTO;
-import com.easy.learn.entity.TrainerSalaryPaid;
+import com.easy.learn.dto.TrainerSalaryPaidSummaryDTO;
+import com.easy.learn.entity.TrainerSalaryPaidSummary;
 import com.easy.learn.mapper.TrainerSalaryPaidMapper;
-import com.easy.learn.repository.TrainerSalaryPaidRepository;
-import com.easy.learn.service.TrainerSalaryPaidService;
+import com.easy.learn.repository.TrainerSalaryPaidSummaryRepository;
+import com.easy.learn.service.TrainerSalaryPaidSummaryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,18 +15,18 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
+public class TrainerSalaryPaidSummaryServiceImpl implements TrainerSalaryPaidSummaryService {
     @Autowired
-    TrainerSalaryPaidRepository repository;
+    TrainerSalaryPaidSummaryRepository repository;
 
     @Autowired
     TrainerSalaryPaidMapper mapper;
 
     @Override
-    public TrainerSalaryPaidDTO create(TrainerSalaryPaidDTO tspDTO) {
-        TrainerSalaryPaidDTO result = new TrainerSalaryPaidDTO();
+    public TrainerSalaryPaidSummaryDTO create(TrainerSalaryPaidSummaryDTO tspDTO) {
+        TrainerSalaryPaidSummaryDTO result = new TrainerSalaryPaidSummaryDTO();
         try {
-            TrainerSalaryPaid tsp = mapper.convertDTOToEntity(tspDTO);
+            TrainerSalaryPaidSummary tsp = mapper.convertDTOToEntity(tspDTO);
             result = mapper.convertEntityToDTO(repository.saveAndFlush(tsp));
         } catch (Exception e) {
             log.error("Error when creating:", e);
@@ -36,9 +36,9 @@ public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
     }
 
     @Override
-    public boolean update(TrainerSalaryPaidDTO dto) {
+    public boolean update(TrainerSalaryPaidSummaryDTO dto) {
         try {
-            TrainerSalaryPaid tsp = mapper.convertDTOToEntity(dto);
+            TrainerSalaryPaidSummary tsp = mapper.convertDTOToEntity(dto);
             mapper.convertEntityToDTO(repository.saveAndFlush(tsp));
             return true;
         } catch (Exception e) {
@@ -48,8 +48,8 @@ public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
     }
 
     @Override
-    public List<TrainerSalaryPaidDTO> findAll() {
-        List<TrainerSalaryPaid> tsp = repository.findAll();
+    public List<TrainerSalaryPaidSummaryDTO> findAll() {
+        List<TrainerSalaryPaidSummary> tsp = repository.findAll();
         return tsp == null ? new ArrayList<>() :
                 tsp.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
     }
@@ -57,7 +57,7 @@ public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
 
     @Override
     public boolean delete(Long id) {
-        TrainerSalaryPaid tsp = repository.findById(id).get();
+        TrainerSalaryPaidSummary tsp = repository.findById(id).get();
         if (tsp != null) {
             repository.delete(tsp);
             return true;
@@ -66,8 +66,8 @@ public class TrainerSalaryPaidServiceImpl implements TrainerSalaryPaidService {
     }
 
     @Override
-    public TrainerSalaryPaidDTO findByTrainerSalaryPaidId(Long id) {
-        TrainerSalaryPaid entity = repository.findById(id) != null ? repository.findById(id).get() : new TrainerSalaryPaid();
+    public TrainerSalaryPaidSummaryDTO findByTrainerSalaryPaidId(Long id) {
+        TrainerSalaryPaidSummary entity = repository.findById(id) != null ? repository.findById(id).get() : new TrainerSalaryPaidSummary();
 
         return mapper.convertEntityToDTO(entity);
     }
