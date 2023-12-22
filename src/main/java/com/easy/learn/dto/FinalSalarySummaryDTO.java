@@ -7,10 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrainerSalaryPaidSummaryDTO {
+public class FinalSalarySummaryDTO {
     private Long id;
-    private String trainerSalaryPaidId;
-    private Integer weekNumber;
     private Integer monthNumber;
     private Integer yearNumber;
     private Double totalNumber;
