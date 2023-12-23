@@ -1,10 +1,10 @@
 package com.easy.learn.service.Impl;
 
-import com.easy.learn.dto.WebsiteVenueDTO;
-import com.easy.learn.entity.WebsiteVenue;
-import com.easy.learn.mapper.WebsiteVenueMapper;
-import com.easy.learn.repository.WebsiteVenueRepository;
-import com.easy.learn.service.WebsiteVenueService;
+import com.easy.learn.dto.TrainerSalaryPaidDTO;
+import com.easy.learn.entity.TrainerSalaryPaid;
+import com.easy.learn.mapper.TrainerSalaryPaidMapper;
+import com.easy.learn.repository.TrainerSalaryPaidRepository;
+import com.easy.learn.service.TrainerSalaryPaidService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +15,17 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class WebsiteVenueServiceImpl implements WebsiteVenueService {
+public class TrainerSalaryPaidImpl implements TrainerSalaryPaidService {
     @Autowired
-    WebsiteVenueRepository repository;
+    TrainerSalaryPaidRepository repository;
 
     @Autowired
-    WebsiteVenueMapper mapper;
+    TrainerSalaryPaidMapper mapper;
     @Override
-    public WebsiteVenueDTO create(WebsiteVenueDTO websiteVenueDTO) {
-        WebsiteVenueDTO result = new WebsiteVenueDTO();
+    public TrainerSalaryPaidDTO create(TrainerSalaryPaidDTO trainerSalaryPaidDTO) {
+        TrainerSalaryPaidDTO result = new TrainerSalaryPaidDTO();
         try {
-            WebsiteVenue tsp = mapper.convertDTOToEntity(websiteVenueDTO);
+            TrainerSalaryPaid tsp = mapper.convertDTOToEntity(trainerSalaryPaidDTO);
             result = mapper.convertEntityToDTO(repository.saveAndFlush(tsp));
         } catch (Exception e) {
             log.error("Error when creating:", e);
@@ -34,9 +34,9 @@ public class WebsiteVenueServiceImpl implements WebsiteVenueService {
     }
 
     @Override
-    public boolean update(WebsiteVenueDTO websiteVenueDTO) {
+    public boolean update(TrainerSalaryPaidDTO trainerSalaryPaidDTO) {
         try {
-            WebsiteVenue tsp = mapper.convertDTOToEntity(websiteVenueDTO);
+            TrainerSalaryPaid tsp = mapper.convertDTOToEntity(trainerSalaryPaidDTO);
             mapper.convertEntityToDTO(repository.saveAndFlush(tsp));
             return true;
         } catch (Exception e) {
@@ -46,15 +46,15 @@ public class WebsiteVenueServiceImpl implements WebsiteVenueService {
     }
 
     @Override
-    public List<WebsiteVenueDTO> findAll() {
-        List<WebsiteVenue> tsp = repository.findAll();
+    public List<TrainerSalaryPaidDTO> findAll() {
+        List<TrainerSalaryPaid> tsp = repository.findAll();
         return tsp == null ? new ArrayList<>() :
                 tsp.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
     }
 
     @Override
     public boolean delete(Long id) {
-        WebsiteVenue tsp = repository.findById(id).get();
+        TrainerSalaryPaid tsp = repository.findById(id).get();
         if (tsp != null) {
             repository.delete(tsp);
             return true;
@@ -63,8 +63,8 @@ public class WebsiteVenueServiceImpl implements WebsiteVenueService {
     }
 
     @Override
-    public WebsiteVenueDTO findById(Long id) {
-        WebsiteVenue entity = repository.findById(id) != null ? repository.findById(id).get() : new WebsiteVenue();
+    public TrainerSalaryPaidDTO findById(Long id) {
+        TrainerSalaryPaid entity = repository.findById(id) != null ? repository.findById(id).get() : new TrainerSalaryPaid();
 
         return mapper.convertEntityToDTO(entity);
     }

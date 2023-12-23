@@ -1,10 +1,10 @@
 package com.easy.learn.mapper;
 
-import com.easy.learn.dto.WebsiteVenueDTO;
-import com.easy.learn.entity.WebsiteVenue;
+import com.easy.learn.dto.WebsiteFinancesDTO;
+import com.easy.learn.entity.WebsiteFinances;
 
-public class WebsiteFinancesMapper extends AbstractMapper<WebsiteVenue, WebsiteVenueDTO>{
+public class WebsiteFinancesMapper extends AbstractMapper<WebsiteFinances, WebsiteFinancesDTO>{
     public WebsiteFinancesMapper(){
-        super(WebsiteVenue.class,WebsiteVenueDTO.class);
+        super(WebsiteFinances.class,WebsiteFinancesDTO.class);
     }
 }

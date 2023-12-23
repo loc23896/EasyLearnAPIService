@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 public class TrainerSalaryPaidSummaryDTO {
     private Long id;
     private String trainerSalaryPaidId;
-    private Integer weekNumber;
     private Integer monthNumber;
     private Integer yearNumber;
     private Double totalNumber;
