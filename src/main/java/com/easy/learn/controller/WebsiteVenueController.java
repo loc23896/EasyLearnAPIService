@@ -54,7 +54,7 @@ public class WebsiteVenueController {
         }
 
         @PostMapping(value = ApiPath.WEBSITE_VENUE_CREATE)
-        public ResponseEntity<WebsiteVenueResponseDTO> createTrainerSalaryPaid(@RequestBody WebsiteVenueDTO dto) {
+        public ResponseEntity<WebsiteVenueResponseDTO> createWebsiteVenue(@RequestBody WebsiteVenueDTO dto) {
             WebsiteVenueResponseDTO response = new WebsiteVenueResponseDTO();
 
             try {
@@ -71,7 +71,7 @@ public class WebsiteVenueController {
             }
         }
         @PutMapping(value = ApiPath.WEBSITE_VENUE_UPDATE)
-        public ResponseEntity<WebsiteVenueResponseDTO> updateTrainerSalaryPaid(@RequestBody WebsiteVenueDTO dto) {
+        public ResponseEntity<WebsiteVenueResponseDTO> updateWebsiteVenue(@RequestBody WebsiteVenueDTO dto) {
             WebsiteVenueResponseDTO response = new WebsiteVenueResponseDTO();
 
             try {
@@ -93,7 +93,7 @@ public class WebsiteVenueController {
             }
         }
         @DeleteMapping(value = ApiPath.WEBSITE_VENUE_DELETE)
-        public ResponseEntity<WebsiteVenueResponseDTO> deleteTrainerSalaryPaid(@RequestParam Long id) {
+        public ResponseEntity<WebsiteVenueResponseDTO> deleteWebsiteVenue(@RequestParam Long id) {
             WebsiteVenueResponseDTO response = new WebsiteVenueResponseDTO();
 
             try {
