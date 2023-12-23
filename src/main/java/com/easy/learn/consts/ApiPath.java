@@ -37,6 +37,23 @@ public interface ApiPath {
     String WEBSITE_FINANCES_SUMMARY_UPDATE = API + "/websitefinancessummary/update";
     String WEBSITE_FINANCES_SUMMARY_DELETE = API + "/websitefinancessummary/delete";
     //
+
+    //FinalSalarySummary
+    String FINAL_SALARY_SUMMARY_GET_ALL = API + "/finalsalarysummary/get-all";
+    String FINAL_SALARY_SUMMARY_GET_ONE = API + "/finalsalarysummary/get-one";
+    String FINAL_SALARY_SUMMARY_CREATE = API + "/finalsalarysummary/create";
+    String FINAL_SALARY_SUMMARY_UPDATE = API + "/finalsalarysummary/update";
+    String FINAL_SALARY_SUMMARY_DELETE = API + "/finalsalarysummary/delete";
+    //
+
+    //StudentFinances
+    String STUDENT_FINANCES_GET_ALL = API + "/studentfinances/get-all";
+    String STUDENT_FINANCES_GET_ONE = API + "/studentfinances/get-one";
+    String STUDENT_FINANCES_CREATE = API + "/studentfinances/create";
+    String STUDENT_FINANCES_UPDATE = API + "/studentfinances/update";
+    String STUDENT_FINANCES_DELETE = API + "/studentfinances/delete";
+    //
+
     //TrainerSalaryPaid
     String TRAINER_SALARY_PAID_GET_ALL = API + "/trainersalary/get-all";
     String TRAINER_SALARY_PAID_GET_ONE = API + "/trainersalarypaid/get-one";
