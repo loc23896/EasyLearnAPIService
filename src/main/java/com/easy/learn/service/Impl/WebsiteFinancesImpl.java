@@ -1,12 +1,8 @@
 package com.easy.learn.service.Impl;
 
-import com.easy.learn.dto.TrainerSalaryPaidSummaryDTO;
 import com.easy.learn.dto.WebsiteFinancesDTO;
-import com.easy.learn.entity.TrainerSalaryPaidSummary;
 import com.easy.learn.entity.WebsiteFinances;
-import com.easy.learn.mapper.TrainerSalaryPaidMapper;
 import com.easy.learn.mapper.WebsiteFinancesMapper;
-import com.easy.learn.repository.TrainerSalaryPaidSummaryRepository;
 import com.easy.learn.repository.WebsiteFinancesRepository;
 import com.easy.learn.service.WebsiteFinancesService;
 import lombok.extern.slf4j.Slf4j;
