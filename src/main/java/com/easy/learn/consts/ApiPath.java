@@ -80,6 +80,17 @@ public interface ApiPath {
     String TRAINER_DELETE = API + "/trainer/delete";
 
     // end
-
+    // student
+    String STUDENT_GET_ALL = API + "/student/get-all";
+    String STUDENT_GET_UUID = API + "/student/get-by-uuid";
+    String STUDENT_CREATE = API + "/student/create";
+    String STUDENT_UPDATE = API + "/student/update";
+    String STUDENT_DELETE = API + "/student/delete";
+// feedback
+String FEEDBACK_GET_ALL = API + "/feedback/get-all";
+    String FEEDBACK_GET_UUID = API + "/feedback/get-by-uuid";
+    String FEEDBACK_CREATE = API + "/feedback/create";
+    String FEEDBACK_UPDATE = API + "/feedback/update";
+    String FEEDBACK_DELETE = API + "/feedback/delete";
     String ADMIN_GET_INDEX = API+"/admin";
 }
