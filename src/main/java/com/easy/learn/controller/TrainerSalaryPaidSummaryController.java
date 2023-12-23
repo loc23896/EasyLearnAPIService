@@ -1,9 +1,9 @@
 package com.easy.learn.controller;
 
 import com.easy.learn.consts.ApiPath;
-import com.easy.learn.dto.TrainerSalaryPaidDTO;
-import com.easy.learn.response.TrainerSalaryPaidResponseDTO;
-import com.easy.learn.service.TrainerSalaryPaidService;
+import com.easy.learn.dto.TrainerSalaryPaidSummaryDTO;
+import com.easy.learn.response.TrainerSalaryPaidSummaryResponseDTO;
+import com.easy.learn.service.TrainerSalaryPaidSummaryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,16 +14,16 @@ import java.util.List;
 
 @RestController
 @Slf4j
-public class TrainerSalaryPaidController {
+public class TrainerSalaryPaidSummaryController {
     @Autowired
-    TrainerSalaryPaidService service;
+    TrainerSalaryPaidSummaryService service;
 
-    @GetMapping(value = ApiPath.TRAINER_SALARY_GET_ALL)
-    public ResponseEntity<TrainerSalaryPaidResponseDTO> getAllTrainerSalaryPaid() {
-        TrainerSalaryPaidResponseDTO response = new TrainerSalaryPaidResponseDTO();
+    @GetMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_GET_ALL)
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getAllTrainerSalaryPaid() {
+        TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
-            List<TrainerSalaryPaidDTO> list = service.findAll();
+            List<TrainerSalaryPaidSummaryDTO> list = service.findAll();
             response.setList(list);
             response.setMessage("Success get all trainer salary records");
             response.setErrorCode(HttpStatus.OK.value());
@@ -36,12 +36,12 @@ public class TrainerSalaryPaidController {
         }
     }
 
-    @GetMapping(value = ApiPath.TRAINER_SALARY_GET_ONE)
-    public ResponseEntity<TrainerSalaryPaidResponseDTO> getTrainerSalaryPaidById(@RequestParam Long id) {
-        TrainerSalaryPaidResponseDTO response = new TrainerSalaryPaidResponseDTO();
+    @GetMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_GET_ONE)
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getTrainerSalaryPaidById(@RequestParam Long id) {
+        TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
-            TrainerSalaryPaidDTO dto = service.findByTrainerSalaryPaidId(id);
+            TrainerSalaryPaidSummaryDTO dto = service.findByTrainerSalaryPaidId(id);
             response.setData(dto);
             response.setMessage("Success get trainer salary record by ID");
             response.setErrorCode(HttpStatus.OK.value());
@@ -54,12 +54,12 @@ public class TrainerSalaryPaidController {
         }
     }
 
-    @PostMapping(value = ApiPath.TRAINER_SALARY_CREATE)
-    public ResponseEntity<TrainerSalaryPaidResponseDTO> createTrainerSalaryPaid(@RequestBody TrainerSalaryPaidDTO dto) {
-        TrainerSalaryPaidResponseDTO response = new TrainerSalaryPaidResponseDTO();
+    @PostMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_CREATE)
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> createTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
+        TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
-            TrainerSalaryPaidDTO createdDto = service.create(dto);
+            TrainerSalaryPaidSummaryDTO createdDto = service.create(dto);
             response.setData(createdDto);
             response.setMessage("Success creating trainer salary record");
             response.setErrorCode(HttpStatus.CREATED.value());
@@ -72,9 +72,9 @@ public class TrainerSalaryPaidController {
         }
     }
 
-    @PutMapping(value = ApiPath.TRAINER_SALARY_UPDATE)
-    public ResponseEntity<TrainerSalaryPaidResponseDTO> updateTrainerSalaryPaid(@RequestBody TrainerSalaryPaidDTO dto) {
-        TrainerSalaryPaidResponseDTO response = new TrainerSalaryPaidResponseDTO();
+    @PutMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_UPDATE)
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> updateTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
+        TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
             boolean updated = service.update(dto);
@@ -95,9 +95,9 @@ public class TrainerSalaryPaidController {
         }
     }
 
-    @DeleteMapping(value = ApiPath.TRAINER_SALARY_DELETE)
-    public ResponseEntity<TrainerSalaryPaidResponseDTO> deleteTrainerSalaryPaid(@RequestParam Long id) {
-        TrainerSalaryPaidResponseDTO response = new TrainerSalaryPaidResponseDTO();
+    @DeleteMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_DELETE)
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> deleteTrainerSalaryPaid(@RequestParam Long id) {
+        TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
             boolean deleted = service.delete(id);

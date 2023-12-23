@@ -6,18 +6,14 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TRAINER_SALARY_PAID")
+@Table(name = "WEBSITE_REVENUE")
 @Getter
 @Setter
-public class TrainerSalaryPaid extends BaseEntity{
+public class WebsiteVenue extends BaseEntity{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
-    @Column(name = "TRAINER_SLR_PAID_ID", length = 5)
-    private String trainerSalaryPaidId;
-
     @Column(name = "DATA_RECORDED")
     private String dataRecorded;
 
@@ -35,11 +31,5 @@ public class TrainerSalaryPaid extends BaseEntity{
 
     @Column(name = "DESCRIPTION")
     private boolean description;
-
-    @Column(name = "CREDIT_DEBIT_CARD")
-    private boolean creditDebit;
-
-    @Column(name = "STATUS")
-    private boolean status;
 
 }

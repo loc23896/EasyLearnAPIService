@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TrainerSalaryPaidDTO {
+public class StudentFinancesDTO {
     private Long id;
-    private String trainerSalaryPaidId;
     private String dataRecorded;
+    private String courseName;
     private String paymentDate;
     private Double amount;
     private String transactionType;

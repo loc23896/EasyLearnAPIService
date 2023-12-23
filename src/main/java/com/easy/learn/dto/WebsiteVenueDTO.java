@@ -1,21 +1,18 @@
 package com.easy.learn.dto;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@EqualsAndHashCode
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TrainerSalaryPaidDTO {
+public class WebsiteVenueDTO {
     private Long id;
-    private String trainerSalaryPaidId;
     private String dataRecorded;
     private String paymentDate;
     private Double amount;
     private String transactionType;
     private boolean paymentMethod;
     private boolean description;
-    private boolean creditDebit;
-    private boolean status;
 }
