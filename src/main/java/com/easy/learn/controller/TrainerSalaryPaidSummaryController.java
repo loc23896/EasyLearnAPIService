@@ -18,7 +18,7 @@ public class TrainerSalaryPaidSummaryController {
     @Autowired
     TrainerSalaryPaidSummaryService service;
 
-    @GetMapping(value = ApiPath.TRAINER_SALARY_GET_ALL)
+    @GetMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_GET_ALL)
     public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getAllTrainerSalaryPaid() {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
@@ -36,7 +36,7 @@ public class TrainerSalaryPaidSummaryController {
         }
     }
 
-    @GetMapping(value = ApiPath.TRAINER_SALARY_GET_ONE)
+    @GetMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_GET_ONE)
     public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getTrainerSalaryPaidById(@RequestParam Long id) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
@@ -54,7 +54,7 @@ public class TrainerSalaryPaidSummaryController {
         }
     }
 
-    @PostMapping(value = ApiPath.TRAINER_SALARY_CREATE)
+    @PostMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_CREATE)
     public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> createTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
@@ -72,7 +72,7 @@ public class TrainerSalaryPaidSummaryController {
         }
     }
 
-    @PutMapping(value = ApiPath.TRAINER_SALARY_UPDATE)
+    @PutMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_UPDATE)
     public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> updateTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
@@ -95,7 +95,7 @@ public class TrainerSalaryPaidSummaryController {
         }
     }
 
-    @DeleteMapping(value = ApiPath.TRAINER_SALARY_DELETE)
+    @DeleteMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_DELETE)
     public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> deleteTrainerSalaryPaid(@RequestParam Long id) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
