@@ -93,5 +93,17 @@ public abstract class AbstractMapper<T, E> {
         mapper.map(e, oldEntity);
         return oldEntity;
     };
+    /**
+     * Update entity from DTO.
+     * @param e DTO
+     * @param oldEntity Existing entity
+     */
+    public void updateEntityFromDTO(E e, T oldEntity) {
+        if (e != null && oldEntity != null) {
+            mapper.map(e, oldEntity);
+        }
+    }
+
+
     //end
 }

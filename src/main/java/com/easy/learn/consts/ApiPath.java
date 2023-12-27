@@ -93,4 +93,16 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String FEEDBACK_UPDATE = API + "/feedback/update";
     String FEEDBACK_DELETE = API + "/feedback/delete";
     String ADMIN_GET_INDEX = API+"/admin";
+    // course
+    String STUDENT_COURSE_GET_ALL = API + "/student-course/get-all";
+    String STUDENT_COURSE_GET_ID = API + "/student-course/get-by-id";
+    String COURSE_GET_ALL = API + "/course/get-all";
+    String COURSE_GET_ID = API + "/course/get-by-id";
+    String COURSE_CREATE = API + "/course/create";
+    String COURSE_UPDATE = API + "/course/update";
+    String COURSE_DELETE = API + "/course/delete";
+
+    //Payment
+    String PAYMENT_PROCESS = API + "/payment/process";
+    String PAYMENT_METHODS = API + "/payment/methods";
 }
