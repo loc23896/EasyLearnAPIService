@@ -6,7 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "WEBSITE_FINANCES _SUMMARY")
+@Table(name = "WEBSITE_FINANCES_SUMMARY")
 @Getter
 @Setter
 public class WebsiteFinancesSummary extends BaseEntity{
