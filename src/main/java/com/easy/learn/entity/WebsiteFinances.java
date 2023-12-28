@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "WEBSITE_FINANCES")
@@ -19,7 +20,7 @@ public class WebsiteFinances extends BaseEntity{
     private String dataRecorded;
 
     @Column(name = "PAYMENT_DATE")
-    private String paymentDate;
+    private Date paymentDate;
 
     @Column(name = "AMOUNT")
     private Double amount;

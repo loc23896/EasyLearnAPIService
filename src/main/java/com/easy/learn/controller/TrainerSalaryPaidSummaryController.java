@@ -37,7 +37,7 @@ public class TrainerSalaryPaidSummaryController {
     }
 
     @GetMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_GET_ONE)
-    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getTrainerSalaryPaidById(@RequestParam Long id) {
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> getTrainerSalaryPaidSummaryById(@RequestParam Long id) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
@@ -55,7 +55,7 @@ public class TrainerSalaryPaidSummaryController {
     }
 
     @PostMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_CREATE)
-    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> createTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> createTrainerSalaryPaidSummary(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
@@ -73,7 +73,7 @@ public class TrainerSalaryPaidSummaryController {
     }
 
     @PutMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_UPDATE)
-    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> updateTrainerSalaryPaid(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> updateTrainerSalaryPaidSummary(@RequestBody TrainerSalaryPaidSummaryDTO dto) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
@@ -96,7 +96,7 @@ public class TrainerSalaryPaidSummaryController {
     }
 
     @DeleteMapping(value = ApiPath.TRAINER_SALARY_SUMMARY_DELETE)
-    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> deleteTrainerSalaryPaid(@RequestParam Long id) {
+    public ResponseEntity<TrainerSalaryPaidSummaryResponseDTO> deleteTrainerSalaryPaidSummary(@RequestParam Long id) {
         TrainerSalaryPaidSummaryResponseDTO response = new TrainerSalaryPaidSummaryResponseDTO();
 
         try {
