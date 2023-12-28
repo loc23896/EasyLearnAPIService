@@ -86,12 +86,26 @@ public interface ApiPath {
     String STUDENT_CREATE = API + "/student/create";
     String STUDENT_UPDATE = API + "/student/update";
     String STUDENT_DELETE = API + "/student/delete";
+
 // feedback
 String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String FEEDBACK_GET_UUID = API + "/feedback/get-by-uuid";
     String FEEDBACK_CREATE = API + "/feedback/create";
     String FEEDBACK_UPDATE = API + "/feedback/update";
     String FEEDBACK_DELETE = API + "/feedback/delete";
+
+
+
+    //ADMIN_TRAINER_COURSE_EDIT by LOC
+    String COURSE_EDIT_GET_ALL = API + "/course-edit/get-all";
+    String COURSE_EDIT_GET_ONE = API + "/course-edit/get-one";
+    String COURSE_EDIT_CREATE = API + "/course-edit/create";
+    String COURSE_EDIT_UPDATE = API + "/course-edit/update";
+    String COURSE_EDIT_DELETE = API + "/course-edit/delete";
+
+//END ADMIN_TRAINER_COURSE_EDIT
+
+
     String ADMIN_GET_INDEX = API+"/admin";
     // course
     String STUDENT_COURSE_GET_ALL = API + "/student-course/get-all";
@@ -105,4 +119,5 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     //Payment
     String PAYMENT_PROCESS = API + "/payment/process";
     String PAYMENT_METHODS = API + "/payment/methods";
+
 }
