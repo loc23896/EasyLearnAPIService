@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -11,7 +13,7 @@ public class StudentFinancesDTO {
     private Long id;
     private String dataRecorded;
     private String courseName;
-    private String paymentDate;
+    private Date paymentDate;
     private Double amount;
     private String transactionType;
     private boolean paymentMethod;
