@@ -34,7 +34,7 @@ public class FeedbackServiceImpl implements FeedbackService {
             Feedback feedback = mapper.convertDTOToEntity(dto);
             result =mapper.convertEntityToDTO(repository.saveAndFlush(feedback));
         } catch (Exception ex) {
-            log.error("Error when creatingh:", ex);
+            log.error("Error when creating:", ex);
         }
 
         return result;
