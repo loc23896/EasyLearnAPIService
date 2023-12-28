@@ -27,8 +27,11 @@ public class CourseEdit extends BaseEntity{
     private String title;
     private String description;
 
+    private String img;
+    private String file;
+
     @ManyToOne
-    @JoinColumn(name = "AdminTrainer_Id")
+    @JoinColumn(name = "AdminTrainer_id")
     private AdminTrainer adminTrainer;
 
     @OneToMany(mappedBy = "courseEdit",cascade = CascadeType.ALL)

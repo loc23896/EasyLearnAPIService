@@ -18,16 +18,13 @@ public class LessonEdit extends BaseEntity{
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "Course_Id")
+    @JoinColumn(name = "Course_id")
     private CourseEdit courseEdit;
 
     @OneToOne
     @JoinColumn(name = "testEdit_id")
     private TestEdit testEdit;
 
-    @OneToOne
-    @JoinColumn(name = "videoEdit_id")
-    private VideoEdit videoEdit;
 
     private LocalDateTime lastUpdate;
     @PreUpdate
