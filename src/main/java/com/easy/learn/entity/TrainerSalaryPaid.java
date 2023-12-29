@@ -38,7 +38,7 @@ public class TrainerSalaryPaid extends BaseEntity{
     private boolean description;
 
     @Column(name = "CREDIT_DEBIT_CARD")
-    private boolean creditDebit;
+    private String creditDebit;
 
     @Column(name = "STATUS")
     private boolean status;

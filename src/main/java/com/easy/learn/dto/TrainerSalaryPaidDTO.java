@@ -18,6 +18,6 @@ public class TrainerSalaryPaidDTO {
     private String transactionType;
     private boolean paymentMethod;
     private boolean description;
-    private boolean creditDebit;
+    private String creditDebit;
     private boolean status;
 }
