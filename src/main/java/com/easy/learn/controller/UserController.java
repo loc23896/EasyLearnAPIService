@@ -34,25 +34,25 @@ public class UserController {
         }
     }
 
-    @PostMapping(value = ApiPath.USER_SIGN_IN)
-    public ResponseEntity<UserResponseDTO> signIn(@RequestBody UserDTO request) {
-        UserResponseDTO response = new UserResponseDTO();
-        try {
-            UserDTO user = service.login(request.getUserName(), request.getPassword());
-            if (user != null && user.getId() != null) {
-                response.setData(user);
-                response.setMessage("Success sign in");
-                response.setErrorCode(200);
-                return new ResponseEntity<>(response, HttpStatus.OK);
-            }
-            response.setMessage("UserName or password incorrect!!");
-            response.setErrorCode(400);
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } catch (Exception e) {
-            response.setMessage("Error when signIn:" + e);
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @PostMapping(value = ApiPath.USER_SIGN_IN)
+//    public ResponseEntity<UserResponseDTO> signIn(@RequestBody UserDTO request) {
+//        UserResponseDTO response = new UserResponseDTO();
+//        try {
+//            UserDTO user = service.login(request.getUserName(), request.getPassword());
+//            if (user != null && user.getId() != null) {
+//                response.setData(user);
+//                response.setMessage("Success sign in");
+//                response.setErrorCode(200);
+//                return new ResponseEntity<>(response, HttpStatus.OK);
+//            }
+//            response.setMessage("UserName or password incorrect!!");
+//            response.setErrorCode(400);
+//            return new ResponseEntity<>(response, HttpStatus.OK);
+//        } catch (Exception e) {
+//            response.setMessage("Error when signIn:" + e);
+//            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
     // end
 }

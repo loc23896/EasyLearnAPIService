@@ -1,5 +1,6 @@
 package com.easy.learn.dto;
 
+import com.easy.learn.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,7 +11,9 @@ import lombok.EqualsAndHashCode;
 @Data
 public class UserDTO {
     private Long id;
-    private String uuid;
-    private String userName;
+    private String firstName;
+    private String lastName;
+    private String email;
     private String password;
+    private Role role;
 }
