@@ -1,12 +1,8 @@
 package com.easy.learn.entity;
 
-import com.easy.learn.Enum.Gender;
-import com.easy.learn.Enum.Status;
-import com.easy.learn.configure.SwaggerConfig;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
-import org.hibernate.id.UUIDGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -32,21 +28,20 @@ public class AdminTrainer extends BaseEntity{
     @Column(length = 15)
     private String lastName;
     private String country;
-    //account active or inactive
-    @Enumerated(EnumType.STRING)
-    private Status status;
+
+    private Boolean status;
     private LocalDate dob;
     private String email;
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+
+    private Boolean gender;
     @Column(length = 20)
     private String phoneNumber;
     @Column(length = 16)
     private String cardNumber;
 
-    @OneToMany(mappedBy = "adminTrainer", cascade = CascadeType.ALL)
-    Set<CourseEdit> courseEdits = new HashSet<>();
-
+//    @OneToMany(mappedBy = "adminTrainer", cascade = CascadeType.ALL)
+//    private Set<CourseEdit> courseEdits = new HashSet<>();
+    private String courseList;
 
 
 }
