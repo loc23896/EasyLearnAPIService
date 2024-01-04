@@ -1,11 +1,8 @@
 package com.easy.learn.service.Impl;
 
-import com.easy.learn.dto.ManagerDTO;
 import com.easy.learn.dto.StudentDTO;
-import com.easy.learn.entity.Manager;
 import com.easy.learn.entity.Student;
 import com.easy.learn.mapper.StudentMapper;
-import com.easy.learn.repository.ManagerRepository;
 import com.easy.learn.repository.StudentRepository;
 import com.easy.learn.service.StudentService;
 import lombok.extern.slf4j.Slf4j;
@@ -66,8 +63,9 @@ public class StudentServiceImpl implements StudentService {
         return false;
     }
     @Override
-    public StudentDTO findByUuid(String uuid) {
-        Student student = repository.findByUuid(uuid);
-        return student != null ? mapper.convertEntityToDTO(student) : null;
+    public StudentDTO findById(Long id) {
+        Student student = repository.findById(id) != null ? repository.findById(id).get() : new Student();
+
+        return mapper.convertEntityToDTO(student);
     }
 }

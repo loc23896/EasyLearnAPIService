@@ -71,18 +71,22 @@ public interface ApiPath {
 
     String MANAGER_SIGN_IN = API + "/manager/sign-in";
     String MANAGER_GET_ALL = API + "/manager/get-all";
+    String MANAGER_GET_UUID = API + "/manager/get-uuid";
+    String MANAGER_CREATE = API + "/manager/create";
+    String MANAGER_UPDATE = API + "/manager/update";
+    String MANAGER_DELETE = API + "/manager/delete";
 
-    //    trainer
+
+
+    // trainer
     String TRAINER_GET_ALL = API + "/trainer/get-all";
-    String TRAINER_GET_UUID = API + "/trainer/get-by-uuid";
+    String TRAINER_GET_ID = API + "/trainer/get-id";
     String TRAINER_CREATE = API + "/trainer/create";
-    String TRAINER_UPDATE = API + "/trainer/get-update";
+    String TRAINER_UPDATE = API + "/trainer/update";
     String TRAINER_DELETE = API + "/trainer/delete";
-
-    // end
     // student
     String STUDENT_GET_ALL = API + "/student/get-all";
-    String STUDENT_GET_UUID = API + "/student/get-by-uuid";
+    String STUDENT_GET_ID = API + "/student/get-by-id";
     String STUDENT_CREATE = API + "/student/create";
     String STUDENT_UPDATE = API + "/student/update";
     String STUDENT_DELETE = API + "/student/delete";

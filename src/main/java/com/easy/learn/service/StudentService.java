@@ -4,5 +4,6 @@ import com.easy.learn.dto.ManagerDTO;
 import com.easy.learn.dto.StudentDTO;
 
 public interface StudentService extends BaseService<StudentDTO>{
-    StudentDTO findByUuid(String uuid);
+
+    StudentDTO findById(Long id);
 }

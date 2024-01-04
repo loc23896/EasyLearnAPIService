@@ -34,7 +34,7 @@ public class Student {
     @Column(name = "phone", length = 10)
     private String phone;
     @Column(name="classId")
-    private Long classId;
+    private String classId;
     @Column(name = "memberManagermentId")
     private Long memberManagermentId;
 }

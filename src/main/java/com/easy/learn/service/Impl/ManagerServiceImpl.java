@@ -7,6 +7,7 @@ import com.easy.learn.repository.ManagerRepository;
 import com.easy.learn.service.ManagerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,12 +22,14 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Autowired
     ManagerMapper mapper;
+//    @Autowired
+//    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
-    public ManagerDTO create(ManagerDTO dto) {
+    public ManagerDTO create(ManagerDTO managerDTO) {
         ManagerDTO result = new ManagerDTO();
         try {
-            Manager manager = mapper.convertDTOToEntity(dto);
+            Manager manager = mapper.convertDTOToEntity(managerDTO);
             result =mapper.convertEntityToDTO(repository.saveAndFlush(manager));
         } catch (Exception ex) {
             log.error("Error when creating:", ex);
@@ -55,6 +58,14 @@ public class ManagerServiceImpl implements ManagerService {
                 .collect(Collectors.toList());
     }
 
+
+
+    @Override
+    public ManagerDTO findByUuid(String uuid) {
+        Manager manager = repository.findByUuid(uuid);
+        return manager != null ? mapper.convertEntityToDTO(manager) : null;
+    }
+
     @Override
     public boolean delete(Long id) {
         Manager manager = repository.findById(id).get();
@@ -64,10 +75,10 @@ public class ManagerServiceImpl implements ManagerService {
         }
         return false;
     }
-
     @Override
-    public ManagerDTO login(String name, String password) {
-        Manager manager = repository.findByUserNameManagerAndPassword(name, password);
-        return manager == null ?  null : mapper.convertEntityToDTO(manager);
+    public ManagerDTO login(String username, String password) {
+        Manager manager = repository.findByUserNameAndPassword(username, password);
+       return mapper.convertEntityToDTO(manager);
     }
+
 }
