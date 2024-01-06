@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "TRAINER_SALARY_PAID")
@@ -22,7 +23,7 @@ public class TrainerSalaryPaid extends BaseEntity{
     private String dataRecorded;
 
     @Column(name = "PAYMENT_DATE")
-    private String paymentDate;
+    private Date paymentDate;
 
     @Column(name = "AMOUNT")
     private Double amount;
@@ -37,7 +38,7 @@ public class TrainerSalaryPaid extends BaseEntity{
     private boolean description;
 
     @Column(name = "CREDIT_DEBIT_CARD")
-    private boolean creditDebit;
+    private String creditDebit;
 
     @Column(name = "STATUS")
     private boolean status;

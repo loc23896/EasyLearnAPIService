@@ -1,11 +1,9 @@
 package com.easy.learn.entity;
 
-import com.easy.learn.Enum.Status;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,27 +15,29 @@ import java.util.Set;
 public class CourseEdit extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Course_id")
     private Long id;
+
     private LocalDateTime lastUpdate;
 
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    private Boolean status;
 
     @Column(length = 50)
     private String title;
+
+    @Column(length = 250)
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "AdminTrainer_Id")
-    private AdminTrainer adminTrainer;
+    private String img;
 
-    @OneToMany(mappedBy = "courseEdit",cascade = CascadeType.ALL)
-    Set<LessonEdit> lessonEdits = new HashSet<>();
 
-    @PreUpdate
-    protected void onUpdate(){
-        lastUpdate = LocalDateTime.now();
-    }
+//    @ManyToOne
+//    @JoinColumn(name = "AdminTrainer_id")
+    private Long adminTrainerId;
+
+//    @OneToMany(mappedBy = "courseEdit",cascade = CascadeType.ALL)
+//    private Set<LessonEdit> lessonEdits = new HashSet<>();
+    private String lessonList;
 
 
 

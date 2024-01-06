@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
-public class StudentFinancesController {
+public class    StudentFinancesController {
     @Autowired
     StudentFinancesService service;
 
@@ -113,4 +113,6 @@ public class StudentFinancesController {
                 return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
+
+
 }

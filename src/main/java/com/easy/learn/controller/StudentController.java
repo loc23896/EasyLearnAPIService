@@ -35,11 +35,11 @@ public class StudentController {
     }
 
 
-    @GetMapping(value = ApiPath.STUDENT_GET_UUID)
-    public ResponseEntity<StudentResponseDTO> getByUuid(@RequestParam String uuid) {
+    @GetMapping(value = ApiPath.STUDENT_GET_ID)
+    public ResponseEntity<StudentResponseDTO> getById(@RequestParam Long id) {
         StudentResponseDTO response = new StudentResponseDTO();
         try{
-            StudentDTO studentDTO = service.findByUuid(uuid);
+            StudentDTO studentDTO = service.findById(id);
             if(studentDTO != null){
                 response.setData(studentDTO);
                 response.setMessage("Success get student by UUID");
@@ -91,10 +91,10 @@ public class StudentController {
     }
 
     @DeleteMapping(value = ApiPath.STUDENT_DELETE)
-    public ResponseEntity<StudentResponseDTO> deleteStudent(@RequestParam Long uuid) {
+    public ResponseEntity<StudentResponseDTO> deleteStudent(@RequestParam Long id) {
         StudentResponseDTO response = new StudentResponseDTO();
         try {
-            boolean deleted = service.delete(uuid);
+            boolean deleted = service.delete(id);
             if (deleted) {
                 response.setMessage("Student deleted successfully");
                 response.setErrorCode(HttpStatus.OK.value());

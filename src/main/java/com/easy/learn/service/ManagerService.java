@@ -1,7 +1,9 @@
 package com.easy.learn.service;
 
 import com.easy.learn.dto.ManagerDTO;
+import com.easy.learn.entity.Manager;
 
 public interface ManagerService extends BaseService<ManagerDTO>{
-    ManagerDTO login(String name, String password);
+    ManagerDTO login(String username, String password);
+    ManagerDTO findByUuid(String uuid);
 }

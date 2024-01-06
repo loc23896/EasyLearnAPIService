@@ -23,6 +23,6 @@ public class TestEdit extends BaseEntity{
     private String op4;
     private String rightAnswer;
 
-    @OneToOne(mappedBy = "testEdit")
-    private LessonEdit lessonEdit;
+//    @OneToOne(mappedBy = "testEdit")
+    private Long lessonEditId;
 }

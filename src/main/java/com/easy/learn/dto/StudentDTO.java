@@ -23,6 +23,6 @@ public class StudentDTO {
     private String email;
     private String address;
     private String phone;
-    private Long classId;
+    private String classId;
     private Long memberManagermentId;
 }

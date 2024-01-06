@@ -71,26 +71,67 @@ public interface ApiPath {
 
     String MANAGER_SIGN_IN = API + "/manager/sign-in";
     String MANAGER_GET_ALL = API + "/manager/get-all";
+    String MANAGER_GET_UUID = API + "/manager/get-uuid";
+    String MANAGER_CREATE = API + "/manager/create";
+    String MANAGER_UPDATE = API + "/manager/update";
+    String MANAGER_DELETE = API + "/manager/delete";
 
-    //    trainer
+
+
+    // trainer
     String TRAINER_GET_ALL = API + "/trainer/get-all";
-    String TRAINER_GET_UUID = API + "/trainer/get-by-uuid";
+    String TRAINER_GET_ID = API + "/trainer/get-id";
     String TRAINER_CREATE = API + "/trainer/create";
-    String TRAINER_UPDATE = API + "/trainer/get-update";
+    String TRAINER_UPDATE = API + "/trainer/update";
     String TRAINER_DELETE = API + "/trainer/delete";
-
-    // end
     // student
     String STUDENT_GET_ALL = API + "/student/get-all";
-    String STUDENT_GET_UUID = API + "/student/get-by-uuid";
+    String STUDENT_GET_ID = API + "/student/get-by-id";
     String STUDENT_CREATE = API + "/student/create";
     String STUDENT_UPDATE = API + "/student/update";
     String STUDENT_DELETE = API + "/student/delete";
+
 // feedback
 String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String FEEDBACK_GET_UUID = API + "/feedback/get-by-uuid";
     String FEEDBACK_CREATE = API + "/feedback/create";
     String FEEDBACK_UPDATE = API + "/feedback/update";
     String FEEDBACK_DELETE = API + "/feedback/delete";
+
+    //ADMIN_TRAINER_COURSE_EDIT by LOC
+    String COURSE_EDIT_GET_ALL = API + "/course-edit/get-all";
+    String COURSE_EDIT_GET_ONE = API + "/course-edit/get-one";
+    String COURSE_EDIT_CREATE = API + "/course-edit/create";
+    String COURSE_EDIT_UPDATE = API + "/course-edit/update";
+    String COURSE_EDIT_DELETE = API + "/course-edit/delete";
+    String COURSE_EDIT_SAVE_OR_UPDATE = API + "/course-edit/save-or-update";
+
+//END ADMIN_TRAINER_COURSE_EDIT
+
+    //ADMIN_TRAINER_LESSON_EDIT by LOC
+    String LESSON_EDIT_GET_ALL = API + "/lesson-edit/get-all";
+    String LESSON_EDIT_GET_ONE = API + "/lesson-edit/get-one";
+    String LESSON_EDIT_CREATE = API + "/lesson-edit/create";
+    String LESSON_EDIT_UPDATE = API + "/lesson-edit/update";
+    String LESSON_EDIT_DELETE = API + "/lesson-edit/delete";
+    String LESSON_EDIT_SAVE_OR_UPDATE = API+ "/lesson-edit/save-or-update";
+
+
+
+//END ADMIN_TRAINER_LESSON_EDIT
+
     String ADMIN_GET_INDEX = API+"/admin";
+    // course
+    String STUDENT_COURSE_GET_ALL = API + "/student-course/get-all";
+    String STUDENT_COURSE_GET_ID = API + "/student-course/get-by-id";
+    String COURSE_GET_ALL = API + "/course/get-all";
+    String COURSE_GET_ID = API + "/course/get-by-id";
+    String COURSE_CREATE = API + "/course/create";
+    String COURSE_UPDATE = API + "/course/update";
+    String COURSE_DELETE = API + "/course/delete";
+
+    //Payment
+    String PAYMENT_PROCESS = API + "/payment/process";
+    String PAYMENT_METHODS = API + "/payment/methods";
+
 }

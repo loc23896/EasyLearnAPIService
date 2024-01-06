@@ -13,27 +13,28 @@ import java.time.LocalDateTime;
 public class LessonEdit extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Lesson_id")
     private Long id;
-    @Column(length = 50)
-    private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "Course_Id")
-    private CourseEdit courseEdit;
-
-    @OneToOne
-    @JoinColumn(name = "testEdit_id")
-    private TestEdit testEdit;
-
-    @OneToOne
-    @JoinColumn(name = "videoEdit_id")
-    private VideoEdit videoEdit;
+    private Long number;
+    @Column(length = 60)
+    private String title;
 
     private LocalDateTime lastUpdate;
-    @PreUpdate
-    protected void onUpdate(){
-        lastUpdate = LocalDateTime.now();
-    }
+
+    private String video;
+    private String test;
+
+    private Integer duration;
+
+//    @ManyToOne
+//    @JoinColumn(name = "Course_id")
+    private Long courseEditId;
+
+//    @OneToOne
+//    @JoinColumn(name = "testEdit_id")
+    private Long testEditId;
+
 }
 
 
