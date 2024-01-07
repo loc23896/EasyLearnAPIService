@@ -134,4 +134,45 @@ public class LessonEditController {
         }
     }
 
+    @GetMapping(value = ApiPath.LESSON_EDIT_GET_LIST_BY_COURSE_ID)
+    public ResponseEntity<LessonEditResponseDTO> getAllLessonByCourseId(@RequestParam Long id) {
+        LessonEditResponseDTO response = new LessonEditResponseDTO();
+
+        try {
+            List<LessonEditDTO> list = service.getAllLessonByCourseId(id);
+            response.setList(list);
+            response.setMessage("Success get all Lesson Edit records by Course ID");
+            response.setErrorCode(HttpStatus.OK.value());
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("Error when getting all Lesson Edit records by Course ID", e);
+            response.setMessage("Error when getting all Lesson Edit records by Course ID: " + e.getMessage());
+            response.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping(value = ApiPath.LESSON_EDIT_DELETE_LIST_BY_COURSE_ID)
+    public ResponseEntity<LessonEditResponseDTO> deleteAllLessonByCourseId(@RequestParam Long id) {
+        LessonEditResponseDTO response = new LessonEditResponseDTO();
+
+        try {
+            boolean deleted = service.deleteAllLessonByCourseId(id);
+            if (deleted) {
+                response.setMessage("Success deleting Lesson Edit record");
+                response.setErrorCode(HttpStatus.OK.value());
+                return new ResponseEntity<>(response, HttpStatus.OK);
+            } else {
+                response.setMessage("Trainer salary record not found");
+                response.setErrorCode(HttpStatus.NOT_FOUND.value());
+                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            log.error("Error when deleting Lesson Edit record", e);
+            response.setMessage("Error when deleting Lesson Edit record: " + e.getMessage());
+            response.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
