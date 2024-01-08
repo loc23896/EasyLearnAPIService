@@ -9,11 +9,10 @@ import lombok.EqualsAndHashCode;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @EqualsAndHashCode
 @Data
+
 public class UserDTO {
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String uuid;
+    private String userName;
     private String password;
-    private Role role;
 }

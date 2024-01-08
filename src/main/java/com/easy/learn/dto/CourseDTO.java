@@ -17,15 +17,12 @@ import java.util.Set;
 @EqualsAndHashCode
 @Data
 public class CourseDTO {
-
-
     private Long id;
-    private LocalDateTime lastUpdate;
-
     private String title;
     private String description;
-
-
-    private List<Lesson> lessons = new ArrayList<>();
+    private double price;
+    private int totalVideos;
+    private String level;
+    private double rating;
 }
 

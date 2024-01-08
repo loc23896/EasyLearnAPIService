@@ -65,5 +65,9 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-
+    @Override
+    public UserDTO login(String name, String password) {
+        User user = repository.findByUserNameAndPassword(name, password);
+        return user == null ?  null : mapper.convertEntityToDTO(user);
+    }
 }
