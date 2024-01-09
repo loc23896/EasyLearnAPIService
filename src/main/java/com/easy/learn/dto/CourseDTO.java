@@ -20,9 +20,9 @@ public class CourseDTO {
     private Long id;
     private String title;
     private String description;
-    private double price;
-    private int totalVideos;
+    private Double price;
+    private Integer totalVideos;
     private String level;
-    private double rating;
+    private Double rating;
 }
 
