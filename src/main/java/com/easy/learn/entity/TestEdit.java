@@ -16,7 +16,6 @@ public class TestEdit extends BaseEntity{
     private Long id;
     private String title;
     private String question;
-    private String diffLevel;
     private String op1;
     private String op2;
     private String op3;
