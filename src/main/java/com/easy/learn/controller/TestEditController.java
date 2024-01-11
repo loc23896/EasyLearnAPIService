@@ -134,30 +134,30 @@ public class TestEditController {
         }
     }
 
-    @GetMapping(value = ApiPath.TEST_EDIT_GET_LIST_BY_COURSE_ID)
-    public ResponseEntity<TestEditResponseDTO> getAllTestByCourseId(@RequestParam Long id) {
+    @GetMapping(value = ApiPath.TEST_EDIT_GET_LIST_BY_LESSON_ID)
+    public ResponseEntity<TestEditResponseDTO> getAllTestByLessonId(@RequestParam Long id) {
         TestEditResponseDTO response = new TestEditResponseDTO();
 
         try {
-            List<TestEditDTO> list = service.getAllTestByCourseId(id);
+            List<TestEditDTO> list = service.getAllTestByLessonId(id);
             response.setList(list);
-            response.setMessage("Success get all Test Edit records by Course ID");
+            response.setMessage("Success get all Test Edit records by Lesson ID");
             response.setErrorCode(HttpStatus.OK.value());
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
             log.error("Error when getting all Test Edit records by Course ID", e);
-            response.setMessage("Error when getting all Test Edit records by Course ID: " + e.getMessage());
+            response.setMessage("Error when getting all Test Edit records by Lesson ID: " + e.getMessage());
             response.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @DeleteMapping(value = ApiPath.TEST_EDIT_DELETE_LIST_BY_COURSE_ID)
-    public ResponseEntity<TestEditResponseDTO> deleteAllTestByCourseId(@RequestParam Long id) {
+    @DeleteMapping(value = ApiPath.TEST_EDIT_DELETE_LIST_BY_LESSON_ID)
+    public ResponseEntity<TestEditResponseDTO> deleteAllTestByLessonId(@RequestParam Long id) {
         TestEditResponseDTO response = new TestEditResponseDTO();
 
         try {
-            boolean deleted = service.deleteAllTestByCourseId(id);
+            boolean deleted = service.deleteAllTestByLessonId(id);
             if (deleted) {
                 response.setMessage("Success deleting Test Edit record");
                 response.setErrorCode(HttpStatus.OK.value());
@@ -174,6 +174,7 @@ public class TestEditController {
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     @PostMapping(value = ApiPath.TEST_EDIT_SAVE_FILE_ALL)
     public ResponseEntity<TestEditResponseDTO> saveAllTest(@RequestBody List<TestEditDTO> dto) {
         TestEditResponseDTO response = new TestEditResponseDTO();
@@ -190,6 +191,24 @@ public class TestEditController {
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+//    @GetMapping(value = ApiPath.TEST_EDIT_GET_LIST_BY_COURSE_ID)
+//    public ResponseEntity<TestEditResponseDTO> getAllTestByCourseId(@RequestParam Long id) {
+//        TestEditResponseDTO response = new TestEditResponseDTO();
+//
+//        try {
+//            List<TestEditDTO> list = service.findTestByCourseId(id);
+//            response.setList(list);
+//            response.setMessage("Success get all Test Edit records by Lesson ID");
+//            response.setErrorCode(HttpStatus.OK.value());
+//            return new ResponseEntity<>(response, HttpStatus.OK);
+//        } catch (Exception e) {
+//            log.error("Error when getting all Test Edit records by Course ID", e);
+//            response.setMessage("Error when getting all Test Edit records by Lesson ID: " + e.getMessage());
+//            response.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+//            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
 
 }

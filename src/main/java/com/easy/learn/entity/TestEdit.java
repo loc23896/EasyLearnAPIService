@@ -14,7 +14,6 @@ public class TestEdit extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "testEdit_id")
     private Long id;
-    private String title;
     private String question;
     private String op1;
     private String op2;

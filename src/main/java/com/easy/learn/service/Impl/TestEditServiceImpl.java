@@ -83,14 +83,14 @@ public class TestEditServiceImpl implements TestEditService {
     }
 
     @Override
-    public List<TestEditDTO> getAllTestByCourseId(Long id) {
-        List<TestEdit> tsp = repository.getAllTestByCourseId(id);
+    public List<TestEditDTO> getAllTestByLessonId(Long id) {
+        List<TestEdit> tsp = repository.getAllTestByLessonId(id);
         return tsp == null ? new ArrayList<>() : tsp.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
     }
 
     @Override
-    public boolean deleteAllTestByCourseId(Long id){
-        List<TestEdit> testToDelete = repository.getAllTestByCourseId(id);
+    public boolean deleteAllTestByLessonId(Long id){
+        List<TestEdit> testToDelete = repository.getAllTestByLessonId(id);
         if (testToDelete != null) {
             repository.deleteAll(testToDelete);
 
@@ -109,4 +109,13 @@ public class TestEditServiceImpl implements TestEditService {
         }
         return new ArrayList<>();
     }
+
+//    @Override
+//    public List<TestEditDTO> findTestByCourseId(Long id) {
+//       List<TestEdit> entities = repository.findTestByCourseId(id);
+//
+//        return entities == null ?
+//                new ArrayList<>() :
+//                entities.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
+//    }
 }

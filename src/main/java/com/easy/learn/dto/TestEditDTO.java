@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class TestEditDTO {
     private Long id;
-    private String title;
     private String question;
     private String op1;
     private String op2;
