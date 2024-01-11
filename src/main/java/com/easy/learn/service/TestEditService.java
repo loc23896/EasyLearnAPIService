@@ -13,10 +13,12 @@ public interface TestEditService extends BaseService<TestEditDTO>{
 
     TestEditDTO findByTestEditId(Long id);
 
-    List<TestEditDTO> getAllTestByCourseId(Long id);
+    List<TestEditDTO> getAllTestByLessonId(Long id);
 
-    boolean deleteAllTestByCourseId(Long id);
+    boolean deleteAllTestByLessonId(Long id);
 
     List<TestEditDTO> saveListTest (List<TestEditDTO> testEditDTOS);
+
+//    List<TestEditDTO> findTestByCourseId(Long id);
 
 }
