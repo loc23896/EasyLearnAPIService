@@ -137,6 +137,10 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
 
 
     String ADMIN_GET_INDEX = API+"/admin";
+
+//    lesson
+    String LESSON_GET_BY_COURSE_ID = API + "/lesson/get";
+//    end
     // course
     String STUDENT_COURSE_GET_ALL = API + "/student-course/get-all";
     String STUDENT_COURSE_GET_ID = API + "/student-course/get-by-id";
