@@ -12,10 +12,10 @@ import java.util.Date;
 public class TrainerDTO {
     private Long id;
     private String uuid;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String email;
     private String phone;
-    private Date dateCreated;
+    private Date datecreated;
     private String status;
 }
