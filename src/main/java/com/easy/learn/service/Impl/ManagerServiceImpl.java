@@ -5,6 +5,7 @@ import com.easy.learn.mapper.ManagerMapper;
 import com.easy.learn.entity.Manager;
 import com.easy.learn.repository.ManagerRepository;
 import com.easy.learn.service.ManagerService;
+import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -65,6 +66,28 @@ public class ManagerServiceImpl implements ManagerService {
         Manager manager = repository.findByUuid(uuid);
         return manager != null ? mapper.convertEntityToDTO(manager) : null;
     }
+
+    @Override
+    public ManagerDTO getByUsername(String username) {
+        Manager manager = repository.findByUsername(username);
+        return manager != null ? mapper.convertEntityToDTO(manager) : null;
+    }
+
+
+    @Override
+    public ManagerDTO getById(Long id) {
+        try {
+            Manager manager = repository.findById(id).orElse(null);
+            if (manager != null) {
+                return mapper.convertEntityToDTO(manager);
+            } else {
+                throw new NotFoundException("Manager not found");
+            }
+        } catch (NotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     @Override
     public boolean delete(Long id) {

@@ -14,4 +14,7 @@ spring:
 logging:
   level:
     root: warn
-
+#    org:
+#      springframework:
+#        data:
+#          jpa: DEBUG

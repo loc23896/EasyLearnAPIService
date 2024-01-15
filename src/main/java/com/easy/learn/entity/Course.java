@@ -1,18 +1,18 @@
 package com.easy.learn.entity;
 
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
+
 @Entity
+@Table(name = "course")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Course {
+
+public class Course extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id")
@@ -22,11 +22,11 @@ public class Course {
     @Column(name = "description")
     private String description;
     @Column(name = "price")
-    private double price;
+    private Double price;
     @Column(name = "total_video")
-    private int totalVideo;
+    private Integer totalVideo;
     @Column(name = "level")
     private String level;
     @Column(name = "rating")
-    private double rating;
+    private Double rating;
 }

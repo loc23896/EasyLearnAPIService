@@ -26,8 +26,6 @@ public class Manager {
     private String firstname;
     @Column(name = "lastname")
     private String lastname;
-    @NotNull(message = "is required")
-    @Size(min=1, message = "is required")
     @Column(name = "username")
     private String username;
     @Column(name = "email")
@@ -36,8 +34,6 @@ public class Manager {
     private String address;
     @Column(name = "phone")
     private String phone;
-    @NotNull (message = "is required")
-    @Size(min=1, message = "is required")
     @Column(name = "password")
     private String password;
     @Column(name = "managementType")

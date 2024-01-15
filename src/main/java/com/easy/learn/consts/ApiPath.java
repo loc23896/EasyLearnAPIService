@@ -75,6 +75,9 @@ public interface ApiPath {
     String MANAGER_CREATE = API + "/manager/create";
     String MANAGER_UPDATE = API + "/manager/update";
     String MANAGER_DELETE = API + "/manager/delete";
+    String MANAGER_GET_BY_USERNAME = API+"/manager/get-by-user-name";
+    String MANAGER_GET_BY_ID = API + "/manager/get-by-id";
+
 
 
 
@@ -106,6 +109,7 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String COURSE_EDIT_DELETE = API + "/course-edit/delete";
     String COURSE_EDIT_SAVE_OR_UPDATE = API + "/course-edit/save-or-update";
 
+
 //END ADMIN_TRAINER_COURSE_EDIT
 
     //ADMIN_TRAINER_LESSON_EDIT by LOC
@@ -115,12 +119,31 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String LESSON_EDIT_UPDATE = API + "/lesson-edit/update";
     String LESSON_EDIT_DELETE = API + "/lesson-edit/delete";
     String LESSON_EDIT_SAVE_OR_UPDATE = API+ "/lesson-edit/save-or-update";
-
-
+    String LESSON_EDIT_GET_LIST_BY_COURSE_ID = API + "/lesson-edit/get-all-by-courseId";
+    String LESSON_EDIT_DELETE_LIST_BY_COURSE_ID = API + "/lesson-edit/delete-all-by-courseId";
 
 //END ADMIN_TRAINER_LESSON_EDIT
+    //START ADMIN_TRAINER_TEST_EDIT by LOC
+    String TEST_EDIT_GET_ALL = API + "/test-edit/get-all";
+    String TEST_EDIT_GET_ONE = API + "/test-edit/get-one";
+    String TEST_EDIT_CREATE = API + "/test-edit/create";
+    String TEST_EDIT_UPDATE = API + "/test-edit/update";
+    String TEST_EDIT_DELETE = API + "/test-edit/delete";
+    String TEST_EDIT_SAVE_OR_UPDATE = API+ "/test-edit/save-or-update";
+    String TEST_EDIT_GET_LIST_BY_LESSON_ID = API + "/test-edit/get-all-by-lessonId";
+    String TEST_EDIT_DELETE_LIST_BY_LESSON_ID = API + "/test-edit/delete-all-by-lessonId";
+    String TEST_EDIT_SAVE_FILE_ALL = API + "/test-edit/save-all";
+
+    String TEST_EDIT_GET_LIST_BY_COURSE_ID = API + "/test-edit/get-all-by-courseId";
+
+    //END ADMIN_TRAINER_TEST_EDIT by LOC
+
 
     String ADMIN_GET_INDEX = API+"/admin";
+
+//    lesson
+    String LESSON_GET_BY_COURSE_ID = API + "/lesson/get";
+//    end
     // course
     String STUDENT_COURSE_GET_ALL = API + "/student-course/get-all";
     String STUDENT_COURSE_GET_ID = API + "/student-course/get-by-id";
