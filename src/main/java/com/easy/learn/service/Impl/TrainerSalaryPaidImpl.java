@@ -22,6 +22,7 @@ public class TrainerSalaryPaidImpl implements TrainerSalaryPaidService {
 
     @Autowired
     TrainerSalaryPaidMapper mapper;
+
     @Override
     public TrainerSalaryPaidDTO create(TrainerSalaryPaidDTO trainerSalaryPaidDTO) {
         TrainerSalaryPaidDTO result = new TrainerSalaryPaidDTO();
@@ -68,7 +69,7 @@ public class TrainerSalaryPaidImpl implements TrainerSalaryPaidService {
     @Override
     public TrainerSalaryPaidDTO findById(Long id) {
         TrainerSalaryPaid entity = repository.findActiveById(id) != null ? repository.findActiveById(id).get() : new TrainerSalaryPaid();
-
         return mapper.convertEntityToDTO(entity);
     }
+
 }

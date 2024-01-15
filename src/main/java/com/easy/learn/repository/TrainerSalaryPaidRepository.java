@@ -11,5 +11,7 @@ public interface TrainerSalaryPaidRepository extends JpaRepository<TrainerSalary
     @Query("SELECT t FROM TrainerSalaryPaid t WHERE t.id = ?1 AND t.active = 1")
     Optional<TrainerSalaryPaid> findActiveById(Long id);
 
+    @Query("SELECT t FROM TrainerSalaryPaid t WHERE t.active = 1")
     List<TrainerSalaryPaid> findByActiveTrue();
+
 }
