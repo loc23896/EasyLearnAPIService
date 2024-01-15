@@ -102,11 +102,11 @@ public class TrainerSalaryPaidController {
                 if (deleted) {
                     response.setMessage("Success deleting trainer salary record");
                     response.setErrorCode(HttpStatus.OK.value());
-                    return new ResponseEntity<>(response, HttpStatus.OK);
+                    return ResponseEntity.ok().build();
                 } else {
                     response.setMessage("Trainer salary record not found");
                     response.setErrorCode(HttpStatus.NOT_FOUND.value());
-                    return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+                    return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
                 }
             } catch (Exception e) {
                 log.error("Error when deleting trainer salary record", e);
@@ -115,4 +115,6 @@ public class TrainerSalaryPaidController {
                 return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
+
+
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,16 +48,18 @@ public class TrainerSalaryPaidImpl implements TrainerSalaryPaidService {
 
     @Override
     public List<TrainerSalaryPaidDTO> findAll() {
-        List<TrainerSalaryPaid> tsp = repository.findAll();
+        List<TrainerSalaryPaid> tsp = repository.findByActiveTrue();
         return tsp == null ? new ArrayList<>() :
                 tsp.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
     }
 
     @Override
     public boolean delete(Long id) {
-        TrainerSalaryPaid tsp = repository.findById(id).get();
-        if (tsp != null) {
-            repository.delete(tsp);
+        Optional<TrainerSalaryPaid> tspOptional = repository.findActiveById(id);
+        if (tspOptional.isPresent()) {
+            TrainerSalaryPaid tsp = tspOptional.get();
+            tsp.setActive(false);
+            repository.save(tsp);
             return true;
         }
         return false;
@@ -64,7 +67,7 @@ public class TrainerSalaryPaidImpl implements TrainerSalaryPaidService {
 
     @Override
     public TrainerSalaryPaidDTO findById(Long id) {
-        TrainerSalaryPaid entity = repository.findById(id) != null ? repository.findById(id).get() : new TrainerSalaryPaid();
+        TrainerSalaryPaid entity = repository.findActiveById(id) != null ? repository.findActiveById(id).get() : new TrainerSalaryPaid();
 
         return mapper.convertEntityToDTO(entity);
     }
