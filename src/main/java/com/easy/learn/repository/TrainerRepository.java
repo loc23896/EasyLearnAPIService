@@ -10,6 +10,6 @@ import java.util.List;
 public interface TrainerRepository extends JpaRepository<Trainer, Long> {
     Trainer findByUuid(String uuid);
 
-    @Query("SELECT t FROM Trainer t WHERE t.id NOT IN (SELECT tsp.trainerId FROM TrainerSalaryPaid tsp WHERE tsp.active = 1)")
+    @Query("SELECT t FROM Trainer t LEFT JOIN TrainerSalaryPaid tsp ON t.id = tsp.trainerId AND tsp.active = true WHERE tsp.trainerId IS NULL")
     List<Trainer> findTrainersNotInSalaryPaid();
 }
