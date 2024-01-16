@@ -62,6 +62,15 @@ public class TrainerServiceImpl implements TrainerService {
         }
         return false;
     }
+
+    @Override
+    public List<TrainerDTO> findTrainersNotInSalaryPaid() {
+        List<Trainer> trainers = repository.findTrainersNotInSalaryPaid();
+        return trainers == null ? new ArrayList<>()
+                : trainers.stream().map(entity -> mapper.convertEntityToDTO(entity))
+                .collect(Collectors.toList());
+    }
+
     @Override
     public TrainerDTO findById(Long id) {
         Trainer trainer = repository.findById(id) != null ? repository.findById(id).get() : new Trainer();

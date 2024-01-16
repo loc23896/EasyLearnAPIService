@@ -11,3 +11,7 @@ spring:
     username: root
     password:
 
+  mvc:
+    format:
+      date: yyyy-MM-dd
+

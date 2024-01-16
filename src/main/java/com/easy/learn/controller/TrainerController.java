@@ -32,6 +32,20 @@ public class TrainerController {
         }
     }
 
+    @GetMapping(value = ApiPath.TRAINER_GET_ALL_NOT_HAVE_SALARY)
+    public ResponseEntity<TrainerResponseDTO> getAllTrainerHaveNotSalary() {
+        TrainerResponseDTO response = new TrainerResponseDTO();
+        try {
+            List<TrainerDTO> list = service.findTrainersNotInSalaryPaid();
+            response.setList(list);
+            response.setMessage("Success get all trainers");
+            response.setErrorCode(200);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            response.setMessage("Error when get all trainers:" + e);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
     @GetMapping(value = ApiPath.TRAINER_GET_ID)
     public ResponseEntity<TrainerResponseDTO> getById(@RequestParam Long id) {

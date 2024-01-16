@@ -16,6 +16,8 @@ public class TrainerDTO {
     private String lastname;
     private String email;
     private String phone;
-    private Date datecreated;
+
+    private Date dateCreated;
+
     private String status;
 }

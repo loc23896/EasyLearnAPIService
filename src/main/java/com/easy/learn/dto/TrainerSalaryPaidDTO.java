@@ -1,8 +1,12 @@
 package com.easy.learn.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 import java.util.Date;
 
@@ -11,13 +15,16 @@ import java.util.Date;
 @NoArgsConstructor
 public class TrainerSalaryPaidDTO {
     private Long id;
-    private String trainerSalaryPaidId;
-    private String dataRecorded;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+7")
     private Date paymentDate;
     private Double amount;
-    private String transactionType;
-    private boolean paymentMethod;
-    private boolean description;
+    private String description;
     private String creditDebit;
-    private boolean status;
+    private Long trainerId;
+    private String trainerFirstName;  // Newly added field
+    private String trainerLastName;
+    private boolean active = true;
+
 }

@@ -60,6 +60,8 @@ public interface ApiPath {
     String TRAINER_SALARY_PAID_CREATE = API + "/trainer-salary-paid/create";
     String TRAINER_SALARY_PAID_UPDATE = API + "/trainer-salary-paid/update";
     String TRAINER_SALARY_PAID_DELETE = API + "/trainer-salary-paid/delete";
+
+    String TRAINER_SALARY_PAID_CHART = API + "/trainer-salary-paid/chart";
     //
     //trainersalarypaidSUMMARY
     String TRAINER_SALARY_SUMMARY_GET_ALL = API + "/trainer-salary-summary/get-all";
@@ -139,6 +141,15 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
 
     //END ADMIN_TRAINER_TEST_EDIT by LOC
 
+
+    // end
+    // trainer
+    String TRAINER_GET_ALL = API + "/trainer/get-all";
+    String TRAINER_GET_ID = API + "/trainer/get-id";
+    String TRAINER_CREATE = API + "/trainer/create";
+    String TRAINER_UPDATE = API + "/trainer/update";
+    String TRAINER_DELETE = API + "/trainer/delete";
+    String TRAINER_GET_ALL_NOT_HAVE_SALARY = API + "/trainer/get-all-not-salary";
 
     String ADMIN_GET_INDEX = API+"/admin";
 
