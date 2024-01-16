@@ -130,8 +130,9 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String TEST_EDIT_GET_LIST_BY_LESSON_ID = API + "/test-edit/get-all-by-lessonId";
     String TEST_EDIT_DELETE_LIST_BY_LESSON_ID = API + "/test-edit/delete-all-by-lessonId";
     String TEST_EDIT_SAVE_FILE_ALL = API + "/test-edit/save-all";
-
     String TEST_EDIT_GET_LIST_BY_COURSE_ID = API + "/test-edit/get-all-by-courseId";
+    String TEST_EDIT_DELETE_LIST_BY_COURSE_ID = API + "/test-edit/delete-all-by-courseId";
+
 
     //END ADMIN_TRAINER_TEST_EDIT by LOC
 

@@ -110,12 +110,22 @@ public class TestEditServiceImpl implements TestEditService {
         return new ArrayList<>();
     }
 
-//    @Override
-//    public List<TestEditDTO> findTestByCourseId(Long id) {
-//       List<TestEdit> entities = repository.findTestByCourseId(id);
-//
-//        return entities == null ?
-//                new ArrayList<>() :
-//                entities.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
-//    }
+    @Override
+    public List<TestEditDTO> findTestsByCourseId(Long id) {
+       List<TestEdit> entities = repository.findTestsByCourseId(id);
+
+        return entities == null ?
+                new ArrayList<>() :
+                entities.stream().map(entity -> mapper.convertEntityToDTO(entity)).collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean deleteAllTestByCourseId(Long id) {
+        List<TestEdit> testToDelete = repository.findTestsByCourseId(id);
+        if (testToDelete != null) {
+            repository.deleteAll(testToDelete);
+            return true;
+        }
+        return false;
+    }
 }
