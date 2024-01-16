@@ -22,38 +22,33 @@ public class Manager {
     private Long id ;
     @Column(name = "uuid", length = 5)
     private String uuid;
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
-
-    @NotNull(message = "is required")
-    @Size(min=1, message = "is required")
+    @Column(name = "firstname")
+    private String firstname;
+    @Column(name = "lastname")
+    private String lastname;
     @Column(name = "username")
-    private String userNameManager;
+    private String username;
     @Column(name = "email")
     private String email;
     @Column(name = "address")
     private String address;
     @Column(name = "phone")
     private String phone;
-    @NotNull (message = "is required")
-    @Size(min=1, message = "is required")
     @Column(name = "password")
     private String password;
     @Column(name = "managementType")
-    private String managementType;
+    private String managementtype;
 
-    public Manager(String uuid, String firstName, String lastName, String usernamemanager, String email, String address, String phone, String password, String managementType) {
+    public Manager(String uuid, String firstname, String lastname, String username, String email, String address, String phone, String password, String managementType) {
         this.uuid = uuid;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userNameManager = usernamemanager;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.username = username;
         this.email = email;
         this.address = address;
         this.phone = phone;
         this.password = password;
-        this.managementType = managementType;
+        this.managementtype = managementType;
     }
 
 }

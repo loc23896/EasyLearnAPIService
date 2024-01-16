@@ -71,7 +71,6 @@ public class TrainerServiceImpl implements TrainerService {
                 .collect(Collectors.toList());
     }
 
-
     @Override
     public TrainerDTO findById(Long id) {
         Trainer trainer = repository.findById(id) != null ? repository.findById(id).get() : new Trainer();

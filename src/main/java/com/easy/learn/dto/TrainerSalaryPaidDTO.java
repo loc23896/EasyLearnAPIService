@@ -8,11 +8,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class TrainerSalaryPaidDTO {
     private Long id;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+7")
     private Date paymentDate;
@@ -23,4 +26,5 @@ public class TrainerSalaryPaidDTO {
     private String trainerFirstName;  // Newly added field
     private String trainerLastName;
     private boolean active = true;
+
 }

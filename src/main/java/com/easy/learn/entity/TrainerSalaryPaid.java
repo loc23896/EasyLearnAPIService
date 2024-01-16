@@ -23,11 +23,13 @@ public class TrainerSalaryPaid extends BaseEntity{
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+7")
     private Date paymentDate;
     private Double amount;
+
     private String description;
     private String creditDebit;
     private Long trainerId;
     private String trainerFirstName;
     private String trainerLastName;
     private boolean active = true;
+
 
 }

@@ -96,4 +96,26 @@ public class WebsiteFinancesSummaryController {
             }
         }
 
+        @DeleteMapping(value = ApiPath.WEBSITE_FINANCES_SUMMARY_DELETE)
+            public ResponseEntity<WebsiteFinancesSummaryResponseDTO> deleteWebsiteFinancesSummary(@RequestParam Long id) {
+                WebsiteFinancesSummaryResponseDTO response = new WebsiteFinancesSummaryResponseDTO();
+
+                try {
+                    boolean deleted = service.delete(id);
+                    if (deleted) {
+                        response.setMessage("Success deleting Website Finances Summary record");
+                        response.setErrorCode(HttpStatus.OK.value());
+                        return new ResponseEntity<>(response, HttpStatus.OK);
+                    } else {
+                        response.setMessage("TWebsite Finances Summary record not found");
+                        response.setErrorCode(HttpStatus.NOT_FOUND.value());
+                        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+                    }
+                } catch (Exception e) {
+                    log.error("Error when deleting Website Finances Summary record", e);
+                    response.setMessage("Error when deleting Website Finances Summary record: " + e.getMessage());
+                    response.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+                    return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            }
 }
