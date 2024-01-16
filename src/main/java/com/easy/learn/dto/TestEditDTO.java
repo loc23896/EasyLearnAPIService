@@ -17,6 +17,7 @@ public class TestEditDTO {
     private String op2;
     private String op3;
     private String op4;
+    private String chose;
     private String rightAnswer;
 
     //    @OneToOne(mappedBy = "testEdit")
