@@ -83,12 +83,6 @@ public interface ApiPath {
 
 
 
-    // trainer
-    String TRAINER_GET_ALL = API + "/trainer/get-all";
-    String TRAINER_GET_ID = API + "/trainer/get-id";
-    String TRAINER_CREATE = API + "/trainer/create";
-    String TRAINER_UPDATE = API + "/trainer/update";
-    String TRAINER_DELETE = API + "/trainer/delete";
     // student
     String STUDENT_GET_ALL = API + "/student/get-all";
     String STUDENT_GET_ID = API + "/student/get-by-id";
