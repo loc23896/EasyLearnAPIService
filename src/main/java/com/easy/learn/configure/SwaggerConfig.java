@@ -41,5 +41,6 @@ public class SwaggerConfig {
                 "MIT-License", "https://en.wikipedia.org/wiki/MIT_License", Collections.emptyList());
     }
 
-    //end http://localhost:9090/swagger-ui.html
+    //end
+    // http://localhost:9090/swagger-ui.html
 }

@@ -105,10 +105,15 @@ public class TestEditServiceImpl implements TestEditService {
         if (testEditDTOS != null) {
             List<TestEdit> entities = mapper.convertDTOListToEntityList(testEditDTOS);
             repository.saveAll(entities);
+
             return mapper.convertEntityListToDTOList(entities);
         }
         return new ArrayList<>();
     }
+
+
+
+
 
     @Override
     public List<TestEditDTO> findTestsByCourseId(Long id) {
