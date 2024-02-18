@@ -163,4 +163,11 @@ String FEEDBACK_GET_ALL = API + "/feedback/get-all";
     String PAYMENT_PROCESS = API + "/payment/process";
     String PAYMENT_METHODS = API + "/payment/methods";
 
+//============================code video by Loc===========================
+    String VIDEO_GET_ALL = API + "/video/get-all";
+    String VIDEO_GET_ONE = API + "/video/get-one";
+    String VIDEO_CREATE = API + "/video/create";
+    String VIDEO_UPDATE = API + "/video/update";
+    String VIDEO_DELETE = API + "/video/delete";
+
 }
